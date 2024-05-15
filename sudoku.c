@@ -44,12 +44,51 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+   //Verificar filas
+   for (int fil = 0; fil < 9;fil++){
+      int arr[10] = {0};
+      for (int col = 0; col < 9; col++){
+         int num = n->sudo[fil][col];
+         if ((num != 0) && (arr[num] == 1)){
+            return 0;
+         }
+         arr[num] = 1;
+      }
+   }
+   
+   //Verificar columnas
+   for (int col = 0; col < 9; col++){
+      int arr[10] = {0};
+      for (int fil = 0; fil < 9;fil++){
+         int num = n->sudo[fil][col];
+         if ((num != 0) && (arr[num] == 1)){
+            return 0;
+         }
+         arr[num] = 1;
+      }
+   }
 
-    return 1;
+   //Verificar submatrices
+   for (int k = 0; k < 9; k += 3){
+      for (int l = 0; l < 9; l += 3){
+         int arr[10] = {0};
+         for (int i = k; i < k+3; i++){
+            for (int j = l; j < l+3; j++){
+               int num = n->sudo[i][j];
+               if ((num != 0) && (arr[num] == 1)){
+                  return 0;
+               }
+               arr[num] = 1;
+            }
+         }
+      }
+   }
+   return 1;
 }
 
 
 List* get_adj_nodes(Node* n){
+   return NULL;
     List* list=createList();
     return list;
 }
@@ -65,7 +104,7 @@ Node* DFS(Node* initial, int* cont){
 
 
 
-/*
+
 int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
@@ -76,4 +115,4 @@ int main( int argc, char *argv[] ){
   print_node(final);
 
   return 0;
-}*/
+}
