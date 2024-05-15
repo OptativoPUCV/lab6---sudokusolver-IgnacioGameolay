@@ -77,3 +77,13 @@ Wed 15 May 2024 10:18:12 PM UTC:
  tests:  7|1
 total_score: 55/70
 24e6340
+Wed 15 May 2024 10:24:42 PM UTC: 
+ sudoku.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:142:28: error: void value not ignored as it ought to be
+  142 |       Node* current_node = pop(S);
+      |                            ^~~
+Compilation failed
+2c888f4

@@ -136,10 +136,35 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+   Stack* S = createStack();
+   push(S, initial);
+   while (!is_empty(S)){
+      Node* current_node = pop(S);
+      if (is_final(current_node)){
+         free(S);
+         return current_node;
+      }
+   }
   return NULL;
 }
 
-
+/*void deep_first_search (node* I){
+  Stack* S=createStack();
+  push(S,I);
+  while (size(S) != 0){
+     node* n = pop(S);
+     if is_visited(n) continue;
+     
+     visit(n);
+     List* adj=get_adj_nodes(n);
+     node* aux= first(adj);
+     while(aux){
+        push(S,aux);
+        aux=next(adj);
+     }
+     free(n);
+  }
+}*/
 
 /*
 int main( int argc, char *argv[] ){
