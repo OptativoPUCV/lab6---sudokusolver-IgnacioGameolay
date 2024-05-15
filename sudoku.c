@@ -95,9 +95,6 @@ List* get_adj_nodes(Node* n){
             break;
          }
       }
-      if (n->sudo[fil][col] == 0){
-         break;
-      }
    }
    
    return list;
