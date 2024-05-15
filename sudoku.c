@@ -171,7 +171,7 @@ Node* DFS(Node* initial, int* cont){
       //c
       List* adj_nodes = get_adj_nodes(current_node);
       //d
-      node* aux= first(adj_nodes);
+      Node* aux= first(adj_nodes);
       while(aux){
          push(S, aux);
          aux = next(adj_nodes);

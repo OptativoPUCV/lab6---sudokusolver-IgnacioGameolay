@@ -110,3 +110,9 @@ sudoku.c:174:7: error: unknown type name ‘node’; did you mean ‘Node’?
       |       Node
 Compilation failed
 7d896d8
+Wed 15 May 2024 10:34:07 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  10|0
+total_score: 70/70
+910f7df
