@@ -88,14 +88,30 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-   return NULL;
-    List* list=createList();
-    return list;
+   for (int fil = 0; fil < 9;fil++){
+      for (int col = 0; col < 9; col++){
+         if (n->sudo[fil][col] == 0){
+            break;
+         }
+      }
+      if (n->sudo[fil][col] == 0){
+         break;
+      }
+   }
+   
+   return list;
 }
 
 
 int is_final(Node* n){
-    return 0;
+   for (int fil = 0; fil < 9;fil++){
+      for (int col = 0; col < 9; col++){
+         if (n->sudo[fil][col] == 0){
+            return 0;
+         }
+      }
+   }
+   return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
