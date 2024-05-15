@@ -135,19 +135,50 @@ int is_final(Node* n){
    return 1;
 }
 
+/*
+1-Cree un stack S (pila) e inserte el nodo.
+
+2-Mientras el stack S no se encuentre vacío:
+
+a) Saque y elimine el primer nodo de S.
+
+b) Verifique si corresponde a un estado final, si es así retorne el nodo.
+
+c) Obtenga la lista de nodos adyacentes al nodo.
+
+d) Agregue los nodos de la lista (uno por uno) al stack S.
+
+e) Libere la memoria usada por el nodo.
+
+3-Si terminó de recorre el grafo sin encontrar una solución, retorne NULL.
+*/
 Node* DFS(Node* initial, int* cont){
+   //1
    Stack* S = createStack();
    push(S, initial);
-   
+
+   //2
    while (!is_empty(S)){
+      //a
       Node* current_node = top(S);
       pop(S);
+      //b
       if (is_final(current_node)){
          free(S);
          return current_node;
       }
+      //c
+      List* adj_nodes = get_adj_nodes(current_node);
+      //d
+      for (Node* n = first(adj_nodes); next(adj_nodes) != NULL; n = next(adj_nodes)){
+         push(S, n);
+      }
+      //e
+      free(adj_nodes);
    }
-  return NULL;
+
+   //3
+   return NULL;
 }
 
 /*void deep_first_search (node* I){
