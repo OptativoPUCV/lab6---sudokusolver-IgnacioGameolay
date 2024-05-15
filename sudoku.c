@@ -104,8 +104,20 @@ List* get_adj_nodes(Node* n){
       }
    }
 
+   //Todas las casillas lenas
    if (fil == 9 && col == 9){
       return list;
+   }
+
+   //crear adjts.
+   for (int num = 1; num <= 9; num++){
+      Node* aux_node = copy(n); //Creo nuevo nodo
+      aux_node->sudo[fil][col] = num;
+      if(is_valid(aux_node)){
+         pushBack(list, aux_node);
+      } else {
+         free(aux_node);
+      }
    }
    
    return list;
