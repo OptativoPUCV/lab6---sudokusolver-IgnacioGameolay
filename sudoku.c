@@ -92,9 +92,9 @@ List* get_adj_nodes(Node* n){
    int fil,col;
    
    for (int i = 0; i < 9;i++){
-      i = fil;
+      fil = i;
       for (int j = 0; j < 9; j++){
-         j = col;
+         col = j;
          if (n->sudo[i][j] == 0){
             break;
          }
