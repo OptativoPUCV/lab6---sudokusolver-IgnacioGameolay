@@ -162,6 +162,7 @@ Node* DFS(Node* initial, int* cont){
       //a
       Node* current_node = top(S);
       pop(S);
+      (*cont)++;
       //b
       if (is_final(current_node)){
          free(S);
@@ -170,8 +171,10 @@ Node* DFS(Node* initial, int* cont){
       //c
       List* adj_nodes = get_adj_nodes(current_node);
       //d
-      for (Node* n = first(adj_nodes); next(adj_nodes) != NULL; n = next(adj_nodes)){
-         push(S, n);
+      node* aux= first(adj_nodes);
+      while(aux){
+         push(S, aux);
+         aux = next(adj_nodes);
       }
       //e
       free(adj_nodes);
@@ -181,7 +184,8 @@ Node* DFS(Node* initial, int* cont){
    return NULL;
 }
 
-/*void deep_first_search (node* I){
+/*
+void deep_first_search (node* I){
   Stack* S=createStack();
   push(S,I);
   while (size(S) != 0){
@@ -197,7 +201,8 @@ Node* DFS(Node* initial, int* cont){
      }
      free(n);
   }
-}*/
+}
+*/
 
 /*
 int main( int argc, char *argv[] ){

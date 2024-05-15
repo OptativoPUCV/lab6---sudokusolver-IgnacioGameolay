@@ -99,3 +99,14 @@ Wed 15 May 2024 10:31:30 PM UTC:
  tests:  7|1
 total_score: 55/70
 79a04a6
+Wed 15 May 2024 10:34:01 PM UTC: 
+ sudoku.c | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:174:7: error: unknown type name ‘node’; did you mean ‘Node’?
+  174 |       node* aux= first(adj_nodes);
+      |       ^~~~
+      |       Node
+Compilation failed
+7d896d8
