@@ -34,3 +34,14 @@ sudoku.c:103:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 98c132c
+Wed 15 May 2024 09:59:20 PM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:98:24: error: ‘col’ undeclared (first use in this function)
+   98 |       if (n->sudo[fil][col] == 0){
+      |                        ^~~
+sudoku.c:98:24: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+e645b23
