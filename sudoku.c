@@ -90,7 +90,8 @@ int is_valid(Node* n){
 List* get_adj_nodes(Node* n){
    List* list = createList();
    int fil,col;
-   
+
+   //Buscar 1r casilla vac[ia]
    for (int i = 0; i < 9;i++){
       fil = i;
       for (int j = 0; j < 9; j++){
@@ -215,4 +216,5 @@ int main( int argc, char *argv[] ){
   print_node(final);
 
   return 0;
-}*/
+}
+*/
